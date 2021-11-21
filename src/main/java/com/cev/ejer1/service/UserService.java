@@ -26,7 +26,7 @@ import org.springframework.transaction.annotation.Transactional;
 import tech.jhipster.security.RandomUtil;
 
 /**
- * Service class for managing users.
+ * Servicio para administrar usuarios
  */
 @Service
 @Transactional

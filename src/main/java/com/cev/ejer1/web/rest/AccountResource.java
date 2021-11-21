@@ -20,7 +20,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * REST controller for managing the current user's account.
+ * REST controller para gestionar la cuenta del usuario actual.
  */
 @RestController
 @RequestMapping("/api")
@@ -51,9 +51,9 @@ public class AccountResource {
      * {@code POST  /register} : register the user.
      *
      * @param managedUserVM the managed user View Model.
-     * @throws InvalidPasswordException {@code 400 (Bad Request)} if the password is incorrect.
-     * @throws EmailAlreadyUsedException {@code 400 (Bad Request)} if the email is already used.
-     * @throws LoginAlreadyUsedException {@code 400 (Bad Request)} if the login is already used.
+     * @throws InvalidPasswordException {@code 400 (Bad Request)} si el password es incorrecto.
+     * @throws EmailAlreadyUsedException {@code 400 (Bad Request)} si el email ya esta en uso.
+     * @throws LoginAlreadyUsedException {@code 400 (Bad Request)} si el usuario ya esta en uso.
      */
     @PostMapping("/register")
     @ResponseStatus(HttpStatus.CREATED)
@@ -69,7 +69,7 @@ public class AccountResource {
      * {@code GET  /activate} : activate the registered user.
      *
      * @param key the activation key.
-     * @throws RuntimeException {@code 500 (Internal Server Error)} if the user couldn't be activated.
+     * @throws RuntimeException {@code 500 (Internal Server Error)} si el usuario no ha podido ser creado.
      */
     @GetMapping("/activate")
     public void activateAccount(@RequestParam(value = "key") String key) {
@@ -80,7 +80,7 @@ public class AccountResource {
     }
 
     /**
-     * {@code GET  /authenticate} : check if the user is authenticated, and return its login.
+     * {@code GET  /authenticate} : comprueba si el usuario esta autenticado y lo devuelve al login.
      *
      * @param request the HTTP request.
      * @return the login if the user is authenticated.

@@ -12,7 +12,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
- * Spring Data JPA repository for the {@link User} entity.
+ * El repositorio para la loguearse y dar de alta a un usuario.
  */
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
